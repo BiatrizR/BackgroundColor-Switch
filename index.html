@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors Swicth</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login">
+        <h2 id="txt">Login</h2>
+
+        <div class="inputBox">
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="inputBox">
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Login" id="btn">
+        </div>
+        <div class="group">
+            <a href="#">Forget Password</a>
+            <a href="#">Singup</a>
+        </div>
+    </div>
+    
+    <div class="colors">
+        <span class="active" onclick="changeColor('#028b67')"
+        style="--clr:#028b67;"></span>
+        <span onclick="changeColor('#2b2a2a')"
+        style="--clr:#2b2a2a;"></span>
+        <span onclick="changeColor('#260348')"
+        style="--clr:#260348;"></span>
+        <span onclick="changeColor('#ff6b6b')"
+        style="--clr:#ff6b6b;"></span>
+        <span onclick="changeColor('#2e86de')"
+        style="--clr:#2e86de;"></span>
+        <span onclick="changeColor('#e854d4')"
+        style="--clr:#e854d4;"></span>
+        <span onclick="changeColor('#ff9f43')"
+        style="--clr:#ff9f43;"></span>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let txt = document.getElementById('txt');
+        function changeColor(color){
+            document.body.style.background = color;
+            btn.style.background = color;
+            txt.style.borderColor = color;
+
+            //marcar cor selecionada como active
+            document.querySelectorAll('span').forEach(function
+            (item){
+                item.classList.remove('active');
+            })
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
